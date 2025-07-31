@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: db
+  labels:
+    app: db
+spec:      #type: ClusterIp(by default)
+  ports: 
+  - name: "db-service"
+    port: 5432  #we can make it any port but for simplicity
+    targetPort: 5432
+  selector:
+    app: db
